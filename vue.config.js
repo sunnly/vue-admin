@@ -11,9 +11,8 @@ module.exports = {
     // 调整内部的 webpack 配置。
     // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/webpack.md
     chainWebpack: () => {},
-    configureWebpack: (config) => {
-        //配置别名解析
-        config.resolove = {
+    configureWebpack:{
+        resolve: {
             extensions: ['.js', '.json', '.vue'],
             alias: {
                 '@': path.resolve(__dirname, './src'),
@@ -31,7 +30,7 @@ module.exports = {
     //Css相关配置
     css:{
         //是否使用css分离插件 ExtractTextPlugin
-        extract: true,
+        // extract: true,
         //开启CSS source maps?
         sourceMap: false,
         //css预设器配置项
