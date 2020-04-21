@@ -29,7 +29,7 @@ module.exports = {
     productionSourceMap: false,
     //Css相关配置
     css:{
-        //是否使用css分离插件 ExtractTextPlugin
+        //是否使用css分离插件 ExtractTextPlugin,这里默认是true，注释掉可以解决css修改后不自动发布问题
         // extract: true,
         //开启CSS source maps?
         sourceMap: false,
@@ -51,7 +51,18 @@ module.exports = {
         host: '0.0.0.0',
         port: 8080,
         // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/cli-service.md#配置代理
-        proxy: null, // string | Object
+        //设置跨域访问
+        proxy: {
+             [process.env.VUE_APP_API]: {
+            // "/api": {
+                target: "http://www.xxtycr.com",
+                changeOrigin: true,
+                pathRewrite: {
+                    ['^' + process.env.VUE_APP_API]: '/api'
+                    // '^/api': '/api'
+                }
+            }
+        }, // string | Object
         before: app => {}
     },
     //第三方插件

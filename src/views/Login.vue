@@ -85,6 +85,8 @@
 </template>
 
 <script>
+    import {Login} from "../api/login";
+console.log(process.env.VUE_APP_ABC);
     export default {
         name: "Login",
         data(){
@@ -151,6 +153,7 @@
                 //忘记密码
             },
             toLogin(){
+                Login();
                 alert("login");
             },
             toRegister(){
@@ -276,7 +279,8 @@
                     }
                 }
                 .right{
-                    background: white;
+                    /*background: white;*/
+                    background: $color;
                     width: 300px;
                     height: 100%;
 
