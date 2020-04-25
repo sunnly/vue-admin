@@ -153,8 +153,13 @@ console.log(process.env.VUE_APP_ABC);
                 //忘记密码
             },
             toLogin(){
-                Login();
-                alert("login");
+                // Login();
+                this.$router.push({
+                    name: 'Index',
+                    params: {username: this.login.username}
+                });
+
+                // alert("login");
             },
             toRegister(){
                 this.$refs.register.validate((valid) => {
