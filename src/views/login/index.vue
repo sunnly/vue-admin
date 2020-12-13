@@ -95,6 +95,10 @@ export default {
     }
   },
   methods: {
+    initPage() {
+      //获取登录页配置信息
+      
+    },
     showPwd() {
       if (this.passwordType === 'password') {
         this.passwordType = ''
